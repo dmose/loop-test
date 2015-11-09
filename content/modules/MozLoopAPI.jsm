@@ -9,8 +9,8 @@ const { classes: Cc, interfaces: Ci, utils: Cu } = Components;
 Cu.import("resource://services-common/utils.js");
 Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
-Cu.import("resource:///modules/loop/MozLoopService.jsm");
-Cu.import("resource:///modules/loop/LoopRooms.jsm");
+Cu.import("chrome://loop/content/modules/MozLoopService.jsm");
+Cu.import("chrome://loop/content/modules/LoopRooms.jsm");
 Cu.importGlobalProperties(["Blob"]);
 
 XPCOMUtils.defineLazyModuleGetter(this, "hookWindowCloseForPanelClose",
@@ -780,7 +780,7 @@ function injectLoopAPI(targetWindow) {
       value: function(name, callback) {
         let request = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"]
                         .createInstance(Ci.nsIXMLHttpRequest);
-        let url = `chrome://browser/content/loop/shared/sounds/${name}.ogg`;
+        let url = `chrome://loop/content/shared/sounds/${name}.ogg`;
 
         request.open("GET", url, true);
         request.responseType = "arraybuffer";

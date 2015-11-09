@@ -6,7 +6,7 @@
  */
 "use strict";
 
-const { injectLoopAPI } = Cu.import("resource:///modules/loop/MozLoopAPI.jsm", {});
+const { injectLoopAPI } = Cu.import("chrome://loop/content/modules/MozLoopAPI.jsm", {});
 gMozLoopAPI = injectLoopAPI({});
 
 var handlers = [
